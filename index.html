@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+</head>
+
+<body>
+    <h1 class="text-center text-white p-3" style="background-color: rgb(28, 67, 112)">
+        2nd todo crud using fetch, async/await with checkbox and
+        details
+    </h1>
+
+    <div class="container-fluid">
+        <div class="row mt-5">
+            <div class="col-md-4 offset-md-1 mb-4">
+                <div class="card">
+                    <div class="card-header text-white text-center" style="background-color: rgb(28, 67, 112)">
+                        <h3>Add Your Todos</h3>
+                    </div>
+
+                    <div class="card-body">
+                        <form id="todoForm">
+                            <div class="form-group">
+                                <label for="todoInput">Todo Item</label>
+                                <input required type="text" id="todoInput" class="form-control" />
+                            </div>
+                            <div class="form-group">
+                                <label for="description">Todo Details</label>
+                                <textarea required id="description" class="form-control" rows="4"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="status">Completed?</label>
+                                <select class="form-control" id="status">
+                                    <option value="no">No</option>
+                                    <option value="yes">Yes</option>
+                                </select>
+                            </div>
+
+                            <button class="btn btn-sm btn-block btn-outline-info" id="addTodoBtn">
+                                Add Todo
+                            </button>
+                            <button type="button" class="btn btn-sm btn-block btn-outline-info d-none"
+                                id="updateTodoBtn">
+                                Update Todo
+                            </button>
+                            <button type="button" class="btn btn-sm btn-block btn-outline-danger"
+                                id="cancelTodoBtn">
+                                Cancel
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header text-center text-white " style="background-color: rgb(28, 67, 112)">
+                        <h3>Your Todos</h3>
+                    </div>
+
+                    <div class="card-body">
+                        <ul class="list-group" id="listContainer">
+                            <!-- <li class="list-group-item">
+                                <div class="accordion" id="listContainer">
+                                    <div class="card">
+                                        <div class="card-header p-1" id="headingOne">
+                                            <h2 class="mb-0 d-flex justify-content-between">
+                                                <button class="btn btn-block text-left" type="button"
+                                                    data-toggle="collapse" data-target="#collapseOne"
+                                                    aria-expanded="true" aria-controls="collapseOne">
+                                                    
+                                                    <strong class="h4"><input type="checkbox">HTML and CSS</strong>
+                                                </button>
+                                                <button class="btn btn-sm btn-outline-info mr-2">Edit</button>
+                                                <button class="btn btn-sm btn-outline-danger">Remove</button>
+                                            </h2>
+                                        </div>
+
+                                        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
+                                            data-parent="#listContainer">
+                                            <div class="card-body bg-dark text-white">
+                                                <p>Some placeholder content for the first accordion panel. This panel is
+                                                shown by default, thanks to the <code>.show</code> class.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                            </li> -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="spinner" class="d-none ">
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="./assets/js/app.js"></script>
+</body>
+
+</html>
